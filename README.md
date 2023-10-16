@@ -6,11 +6,10 @@
 - **Python**
 - **Java Script**
 - **Java**
-                                                                                                              
 
 ### Data Structure:
 
->Websites and resources with modern UI components in different 
+> A data structure is a way of organizing and managing data so that it can be accessed and processed efficiently. There are many different data structures, each with its own strengths and weaknesses. Some common data structures include 
 
 | Data Structure                | Description                        |
 | ----------------------------- | ---------------------------------- |
@@ -23,4 +22,5 @@
 | [Queues](#queues)             | Queues Data Type Description       |
 | [Linked Lists](#LinkedLists)  | Linked Lists Data Type Description |
 | [Trees](#trees)               | Trees Data Type Description        |
+| [Binary Tree](#binaryTree)    | Binary Tree Data Type Description  |
 | [Graph](#graph)               | Graph Data Type Description        |
