@@ -43,6 +43,15 @@
 | [Binary Tree](#binaryTree)    | Binary Tree Data Type Description  |
 | [Graph](#graph)               | Graph Data Type Description        |
 
+## Algorithms:
+
+> An algorithm is a procedure used for solving a problem or performing a computation
+
+| Algorithm               | Description | Learning Resources  |
+| ----------------------- | ----------- | ------------------- |
+| [Sliding Widow](#array) | -           | [Resources](#array) |
+| [Two Pointer](#array)   | -           |                     |
+
 ### Array
 > this 
 
