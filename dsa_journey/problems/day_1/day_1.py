@@ -1,4 +1,4 @@
-
+# 1071. Greatest Common Divisor of Strings
 
 def gcdOfStrings(self, str1: str, str2: str) -> str:
     def isDevisor(l):
