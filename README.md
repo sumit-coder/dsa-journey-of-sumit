@@ -18,6 +18,7 @@
 | Learn Data Structures and Algorithms for free | [Youtube Video](https://www.youtube.com/watch?v=CBYHwZcbD-s) |
 | Big O: How Code Slows as Data Grows           | [Youtube Video](https://www.youtube.com/watch?v=Ee0HzlnIYWQ) |
 | Big-O Notation - For Coding Interviews        | [Youtube Video](https://www.youtube.com/watch?v=BgLTDT03QtU) |
+| The Complete Guide to Big O Notation & Complexity Analysis for Algorithms: Part 1 of 2 | [Youtube Video](https://www.youtube.com/watch?v=HfIH3czXc-8) |
 
 ### Websites:
 | Websites           | Description                                                                                              | Links                                      |
