@@ -1,5 +1,4 @@
 # 👨‍💻📖 DSA Journey of Sumit 🤯
----
 
 ## Programming Languages:
 - **Dart**
@@ -18,12 +17,16 @@
 | Learn Data Structures and Algorithms for free | [Youtube Video](https://www.youtube.com/watch?v=CBYHwZcbD-s) |
 | Big O: How Code Slows as Data Grows           | [Youtube Video](https://www.youtube.com/watch?v=Ee0HzlnIYWQ) |
 | Big-O Notation - For Coding Interviews        | [Youtube Video](https://www.youtube.com/watch?v=BgLTDT03QtU) |
+| The Complete Guide to Big O Notation & Complexity Analysis for Algorithms: Part 1 of 2 | [Youtube Video](https://www.youtube.com/watch?v=HfIH3czXc-8) |
 
 ### Websites:
 | Websites           | Description                                                                                              | Links                                      |
 | ------------------ | -------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | neetcode.io        | This website covers wide range problem with Video Solution + Roadmap for Beginners                       | [Website](https://neetcode.io/roadmap)     |
 | bigocheatsheet.com | This webpage covers the space and time Big-O complexities of common algorithms used in Computer Science. | [Website](https://www.bigocheatsheet.com/) |
+| igotanoffer.com | All in one DSA Refresh with Great Time & Space PDF | [Website](https://igotanoffer.com/blogs/tech/data-structure-interview-questions) |
+| metacareers.com | DSA from Meta Careers | [Website](https://www.metacareers.com/profile/trial/?redirect=search&chooseView=Hello+World) |
+| techinterviewhandbook.org | Blind 75 + Grind 169 | [Website](https://www.techinterviewhandbook.org/grind75?weeks=8&hours=21) |
 
 ## Data Structure:
 
