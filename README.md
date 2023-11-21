@@ -59,9 +59,50 @@
 ### Array
 > this 
 
-| Array Method | Complexity |
-| ------------ | ---------- |
-| Access       | O(1)       |
-| Search       | O(n)       |
-| Insertion    | O(n)       |
-| Deletion     | O(n)       |
+| **Method**                               | **Description**                           | **Time Complexity**                       | **Space Complexity**                      |
+|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
+| `list()`                                 | Creates a new empty list.                 | O(1)                                     | O(1)                                     |
+| `list(iterable)`                         | Creates a list from an iterable.          | O(len(iterable))                         | O(len(iterable))                         |
+| `append(element)`                        | Adds an element to the end of the list.   | O(1)                                     | O(1)                                     |
+| `extend(iterable)`                       | Extends the list by appending elements from the iterable. | O(len(iterable)) | O(len(iterable))                         |
+| `insert(index, element)`                 | Inserts an element at the specified index. | O(n) where n is the length of the list   | O(1)                                     |
+| `remove(element)`                        | Removes the first occurrence of the specified element. | O(n) where n is the length of the list   | O(1)                                     |
+| `pop(index)`                             | Removes and returns the element at the specified index. | O(n) where n is the length of the list   | O(1)                                     |
+| `index(element)`                         | Returns the index of the first occurrence of the specified element. | O(n) where n is the length of the list   | O(1)                                     |
+| `count(element)`                         | Returns the number of occurrences of the specified element. | O(n) where n is the length of the list   | O(1)                                     |
+| `sort()`                                | Sorts the elements of the list in ascending order. | O(n*log(n)) where n is the length of the list | O(log(n))                                |
+| `reverse()`                             | Reverses the elements of the list in-place. | O(n) where n is the length of the list   | O(1)                                     |
+| `copy()`                                | Returns a shallow copy of the list.       | O(n) where n is the length of the list   | O(n) where n is the length of the list   |
+| `clear()`                               | Removes all elements from the list.       | O(1)                                     | O(1)                                     |
+| `len(list)`                              | Returns the number of elements in the list.| O(1)                                     | O(1)                                     |
+| `list.remove()` with a loop              | Removes elements from the list based on a condition using a loop. | O(n) where n is the length of the list   | O(1)                                     |
+| `list comprehension`                     | Creates a new list with the specified expression for each item in the iterable. | O(len(iterable)) | O(len(iterable))                         |
+| `map(function, iterable)`                | Applies a function to all the items in the input iterable and returns a new list. | O(n) where n is the length of the iterable | O(n) where n is the length of the iterable |
+
+Please note that these complexities are average-case complexities, and actual performance may vary based on specific Python implementations and hardware considerations. Use this information as a general guideline. If you have any more questions or need further clarification, feel free to ask!
+
+
+### Set
+> Python Set Time Complexity
+
+| **Operation**                            | **Time Complexity**                       |
+|------------------------------------------|------------------------------------------|
+| `set()`                                  | O(1)                                     |
+| `set(iterable)`                          | O(len(iterable))                         |
+| `add(element)`                           | O(1)                                     |
+| `remove(element)`                        | O(1) if present, KeyError if not         |
+| `discard(element)`                       | O(1) if present, no action if not        |
+| `pop()`                                  | O(1) - removes and returns an arbitrary element (KeyError if set is empty)|
+| `clear()`                                | O(1) - removes all elements from the set |
+| `element in set`                         | O(1)                                     |
+| `element not in set`                     | O(1)                                     |
+| `union(other_set)`                       | O(len(set) + len(other_set))             |
+| `intersection(other_set)`                | O(min(len(set), len(other_set)))         |
+| `difference(other_set)`                  | O(len(set))                              |
+| `symmetric_difference(other_set)`        | O(len(set))                              |
+| `issubset(other_set)`                    | O(len(set))                              |
+| `issuperset(other_set)`                  | O(len(other_set))                        |
+| `len(set)`                               | O(1)                                     |
+| `copy()`                                | O(len(set))                              |
+| `{expression for item in iterable}`      | O(len(iterable))                         |
+| `set.remove()` with a loop               | O(n) where n is the number of elements to remove |
