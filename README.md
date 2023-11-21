@@ -79,7 +79,36 @@
 | `list comprehension`                     | Creates a new list with the specified expression for each item in the iterable. | O(len(iterable)) | O(len(iterable))                         |
 | `map(function, iterable)`                | Applies a function to all the items in the input iterable and returns a new list. | O(n) where n is the length of the iterable | O(n) where n is the length of the iterable |
 
-Please note that these complexities are average-case complexities, and actual performance may vary based on specific Python implementations and hardware considerations. Use this information as a general guideline. If you have any more questions or need further clarification, feel free to ask!
+Just so you know, these complexities are average-case complexities, and actual performance may vary based on specific Python implementations and hardware considerations. Use this information as a general guideline. If you have any more questions or need further clarification, feel free to ask!
+
+### Dictionary
+> Python Dictionary Time Complexity
+
+| **Method**                               | **Description**                           | **Time Complexity**                       | **Space Complexity**                      |
+|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
+| `dict()`                                 | Creates a new empty dictionary.           | O(1)                                     | O(1)                                     |
+| `dict(mapping, **kwargs)`                 | Creates a dictionary from a mapping or keyword arguments. | O(len(mapping) + len(kwargs))         | O(len(mapping) + len(kwargs))         |
+| `clear()`                                | Removes all items from the dictionary.    | O(1)                                     | O(1)                                     |
+| `copy()`                                 | Returns a shallow copy of the dictionary. | O(len(dict))                             | O(len(dict))                             |
+| `fromkeys(iterable, value)`              | Creates a new dictionary with keys from the iterable and values set to the specified value. | O(len(iterable))                  | O(len(iterable))                  |
+| `get(key, default=None)`                 | Returns the value for the specified key, or a default value if the key is not found. | O(1)                                     | O(1)                                     |
+| `items()`                               | Returns a view of the dictionary's key-value pairs. | O(1) (for view creation), O(n) to access elements | O(1) (for view creation), O(n) to store elements |
+| `keys()`                                | Returns a view of the dictionary's keys.  | O(1) (for view creation), O(n) to access elements | O(1) (for view creation), O(n) to store elements |
+| `values()`                              | Returns a view of the dictionary's values.| O(1) (for view creation), O(n) to access elements | O(1) (for view creation), O(n) to store elements |
+| `pop(key, default=None)`                 | Removes and returns the value for the specified key, or a default value if the key is not found. | O(1) if the key is present, O(1) for default case | O(1)                                     |
+| `popitem()`                             | Removes and returns an arbitrary key-value pair. Raises KeyError if the dictionary is empty. | O(1)                                     | O(1)                                     |
+| `setdefault(key, default=None)`          | Returns the value for the specified key, or inserts the key with a default value if the key is not found. | O(1) if the key is present, O(1) for default case | O(1)                                     |
+| `update(iterable)`                      | Updates the dictionary with key-value pairs from another iterable or dictionary. | O(len(iterable))                  | O(len(iterable))                  |
+| `pop(key)`                              | Removes and returns the value for the specified key. Raises KeyError if the key is not found. | O(1)                                     | O(1)                                     |
+| `keys()`                                | Returns a view of the dictionary's keys.  | O(1) (for view creation), O(n) to access elements | O(1) (for view creation), O(n) to store elements |
+| `values()`                              | Returns a view of the dictionary's values.| O(1) (for view creation), O(n) to access elements | O(1) (for view creation), O(n) to store elements |
+| `items()`                               | Returns a view of the dictionary's key-value pairs. | O(1) (for view creation), O(n) to access elements | O(1) (for view creation), O(n) to store elements |
+| `clear()`                               | Removes all items from the dictionary.    | O(1)                                     | O(1)                                     |
+| `len(dict)`                              | Returns the number of items in the dictionary. | O(1)                                     | O(1)                                     |
+| `in` and `not in` operators              | Checks if a key is present in the dictionary. | O(1)                                     | O(1)                                     |
+| `dict comprehension`                     | Creates a new dictionary with the specified expression for each key-value pair in the iterable. | O(len(iterable))                  | O(len(iterable))                  |
+
+Just so you know, these complexities are average-case complexities, and actual performance may vary based on specific Python implementations and hardware considerations. Use this information as a general guideline. If you have any more questions or need further clarification, feel free to ask!
 
 
 ### Set
