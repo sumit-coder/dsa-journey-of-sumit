@@ -3,7 +3,7 @@
 ## Programming Languages:
 - **Dart**
 - **Python**
-- **Java Script**
+- **Javascript**
 - **Java**
 
 ## Learning Materials:
