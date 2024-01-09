@@ -19,6 +19,16 @@
 | Big-O Notation - For Coding Interviews        | [Youtube Video](https://www.youtube.com/watch?v=BgLTDT03QtU) |
 | The Complete Guide to Big O Notation & Complexity Analysis for Algorithms: Part 1 of 2 | [Youtube Video](https://www.youtube.com/watch?v=HfIH3czXc-8) |
 
+### Videos by Topic:
+| Videos                                        | Links                                                        |
+| --------------------------------------------- | ------------------------------------------------------------ |
+| Recursion in Programming - Full Course                                           | [Youtube Video](https://www.youtube.com/watch?v=IJDJ0kBx2LM) |
+| Linked Lists for Technical Interviews - Full Course                              | [Youtube Video](https://www.youtube.com/watch?v=Hj_rA0dhr2I) |
+| Binary Tree Algorithms for Technical Interviews - Full Course                    | [Youtube Video](https://www.youtube.com/watch?v=fAAZixBzIAI) |
+| Graph Algorithms for Technical Interviews - Full Course                          | [Youtube Video](https://www.youtube.com/watch?v=tWVWeAqZ0WU) |
+| Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges    | [Youtube Video](https://www.youtube.com/watch?v=oBt53YbR9Kk) |
+
+
 ### Websites:
 | Websites           | Description                                                                                              | Links                                      |
 | ------------------ | -------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
