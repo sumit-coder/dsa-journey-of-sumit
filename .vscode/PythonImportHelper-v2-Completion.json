@@ -1,0 +1,149 @@
+[
+    {
+        "label": "List",
+        "importPath": "ast",
+        "description": "ast",
+        "isExtraImport": true,
+        "detail": "ast",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "gcdOfStrings",
+        "kind": 2,
+        "importPath": "dsa_journey.problems.day_1.day_1",
+        "description": "dsa_journey.problems.day_1.day_1",
+        "peekOfCode": "def gcdOfStrings(self, str1: str, str2: str) -> str:\n    def isDevisor(l):\n        if len(str1) % l or len(str2) % l:\n            return False\n        return str1[:l] * (len(str1) // l) == str1 and str1[:l] * (len(str2) // l) == str2\n    for i in range(min(len(str1), len(str2)), 0, -1):\n        if isDevisor(i):\n            return str1[:i]\n    return \"\"",
+        "detail": "dsa_journey.problems.day_1.day_1",
+        "documentation": {}
+    },
+    {
+        "label": "closeStrings",
+        "kind": 2,
+        "importPath": "dsa_journey.problems.day_25.day_25",
+        "description": "dsa_journey.problems.day_25.day_25",
+        "peekOfCode": "def closeStrings(word1: str, word2: str) -> bool:\n        if len(word1) != len(word2): return False\n        counterMap1 = Counter(word1)\n        counterMap2 = Counter(word2)\n        wordKeys = counterMap1.keys() == counterMap2.keys()\n        print(wordKeys)\n        print(counterMap1.keys())\n        print(counterMap2.keys())\n        wordValues1 = sorted(counterMap1.values()) \n        wordValues2 = sorted(counterMap2.values())",
+        "detail": "dsa_journey.problems.day_25.day_25",
+        "documentation": {}
+    },
+    {
+        "label": "longestConsecutive",
+        "kind": 2,
+        "importPath": "dsa_journey.problems.day_25.day_25",
+        "description": "dsa_journey.problems.day_25.day_25",
+        "peekOfCode": "def longestConsecutive(nums):\n      counter = Counter(nums)\n      return counter\nprint(longestConsecutive([0,3,7,2,5,8,4,6,0,1]))",
+        "detail": "dsa_journey.problems.day_25.day_25",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "dsa_journey.problems.day_25.day_25_2",
+        "description": "dsa_journey.problems.day_25.day_25_2",
+        "peekOfCode": "class Solution:\n    def equalPairs(self, grid: List[List[int]]) -> int: # type: ignore\n        rowDict = defaultdict(int)\n        count = 0 \n        for row in grid:\n            rowDict[str(row)] += 1\n        for i in range(len(grid)):\n            column = []\n            for j in range(len(grid)):\n                column.append(grid[j][i])",
+        "detail": "dsa_journey.problems.day_25.day_25_2",
+        "documentation": {}
+    },
+    {
+        "label": "solution",
+        "kind": 2,
+        "importPath": "dsa_journey.problems.day_28.day_28",
+        "description": "dsa_journey.problems.day_28.day_28",
+        "peekOfCode": "def solution(s):\n    stack = []\n    res = ''\n    cCount = 0\n    local = ''\n    for n in s:\n        if s.isdigit():\n            cCount = s\n        elif s == '[':\n            stack.append(cCount)",
+        "detail": "dsa_journey.problems.day_28.day_28",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "dsa_journey.problems.day_4.day_4",
+        "description": "dsa_journey.problems.day_4.day_4",
+        "peekOfCode": "class Solution:\n    def productExceptSelf(self, nums: List[int]) -> List[int]:\n        result = [1] * (len(nums))\n        prefix = 1\n        for idx in range(len(nums)):\n            result[idx] = prefix\n            prefix *= nums[idx]\n        postfix = 1\n        for idx in range(len(nums) - 1, -1, -1):\n            result[idx] *= postfix",
+        "detail": "dsa_journey.problems.day_4.day_4",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "dsa_journey.problems.day_5.day_5",
+        "description": "dsa_journey.problems.day_5.day_5",
+        "peekOfCode": "class Solution:\n    def isSubsequence(self, s: str, t: str) -> bool:\n        idx = 0\n        if (s == ''):\n            return True\n        for word in t:\n            if word == s[idx]:\n                idx = idx + 1\n            if idx == len(s):\n                return True",
+        "detail": "dsa_journey.problems.day_5.day_5",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "dsa_journey.problems.day_7.day_7",
+        "description": "dsa_journey.problems.day_7.day_7",
+        "peekOfCode": "class Solution:\n    def strStr(self, haystack: str, needle: str) -> int:\n        for fast in range(len(haystack) + 1 - len(needle)):\n            if haystack[fast: fast + len(needle)] == needle:\n                return fast\n        return -1",
+        "detail": "dsa_journey.problems.day_7.day_7",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "dsa_journey.problems.day_8.day_8",
+        "description": "dsa_journey.problems.day_8.day_8",
+        "peekOfCode": "class Solution:\n    def findMaxAverage(self, nums: List[int], k: int) -> float:\n        curSum = sum(nums[:k])\n        maxAvg = curSum\n        for i in range(k, len(nums)):\n            curSum += nums[i]\n            curSum -= nums[i-k]\n            maxAvg = max(maxAvg, curSum)\n        return maxAvg / k",
+        "detail": "dsa_journey.problems.day_8.day_8",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "class Solution:\n    def wordBreak(self, s: str, wordDict: List[str]) -> bool:\n        memo = defaultdict(bool)\n        def dfs(word, wordDict):\n            if word == '': return True\n            if(word in memo): return memo[word]\n            for w in wordDict:\n                wLen = len(w)\n                if word[:wLen] == w:\n                    canConstructRes = dfs(word[wLen:], wordDict)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "obj",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "obj = Solution()\nprint(obj.wordBreak('leetcode', [\"leet\",\"code\"] ))\n# s = \"leetcode\", wordDict = [\"leet\",\"code\"]",
+        "detail": "test",
+        "documentation": {}
+    }
+]
