@@ -36,39 +36,67 @@
 # # for idx in range(len(arr)):
 
 
+def testFunction():
+    
+    
+    result = []
 
+    def dfs(target, numBank):
+        if target < 0: return None
+        if target == 0: return []
 
-
-from collections import defaultdict
-from typing import List
-
-
-class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-
-        memo = defaultdict(bool)
-
-        def dfs(word, wordDict):
-            if word == '': return True
-            if(word in memo): return memo[word]
-
-            for w in wordDict:
-                wLen = len(w)
-                
-                if word[:wLen] == w:
-                    canConstructRes = dfs(word[wLen:], wordDict)
-                    if canConstructRes == True: 
-                        memo[word] = True
-                        return True
-
-            memo[word] = False
-            return False 
         
-        return dfs(s, wordDict)
+        
+        
+        for num in numBank:
+            newTarget = target - num
+            targetCombi = dfs(newTarget, numBank)
+            print(targetCombi)
+            if targetCombi != None:
+                fullCombination = [targetCombi, num]
+                result.append(fullCombination)
+    
+
+    
+        
+    
+    print(dfs(7, [2,3,6,7]))
+    print(result)
+
+testFunction()
 
 
-obj = Solution()
 
-print(obj.wordBreak('leetcode', ["leet","code"] ))
+# from collections import defaultdict
+# from typing import List
+
+
+# class Solution:
+#     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+
+#         memo = defaultdict(bool)
+
+#         def dfs(word, wordDict):
+#             if word == '': return True
+#             if(word in memo): return memo[word]
+
+#             for w in wordDict:
+#                 wLen = len(w)
+                
+#                 if word[:wLen] == w:
+#                     canConstructRes = dfs(word[wLen:], wordDict)
+#                     if canConstructRes == True: 
+#                         memo[word] = True
+#                         return True
+
+#             memo[word] = False
+#             return False 
+        
+#         return dfs(s, wordDict)
+
+
+# obj = Solution()
+
+# print(obj.wordBreak('leetcode', ["leet","code"] ))
 
 # s = "leetcode", wordDict = ["leet","code"]
