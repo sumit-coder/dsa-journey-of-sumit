@@ -2,7 +2,6 @@
 # from typing import Counter
 
 
-
 # name = {'name': 'jake'}
 
 # name.values()
@@ -22,13 +21,11 @@
 
 #         return False
 
-     
 
-    
 #     def dfs(word, leftArray, freq):
 #         for leftWord in leftArray:
 #             leftWordFreq = Counter(leftWord)
-#             # 
+#             #
 #             # for key, val in leftWordFreq.items():
 #                 # if val == 1 and key in freq:
 
@@ -36,18 +33,19 @@
 # # for idx in range(len(arr)):
 
 
+from heapq import heapify, heappush, heappop
+
+
 def testFunction():
-    
-    
+
     result = []
 
     def dfs(target, numBank):
-        if target < 0: return None
-        if target == 0: return []
+        if target < 0:
+            return None
+        if target == 0:
+            return []
 
-        
-        
-        
         for num in numBank:
             newTarget = target - num
             targetCombi = dfs(newTarget, numBank)
@@ -55,16 +53,11 @@ def testFunction():
             if targetCombi != None:
                 fullCombination = [targetCombi, num]
                 result.append(fullCombination)
-    
 
-    
-        
-    
-    print(dfs(7, [2,3,6,7]))
+    print(dfs(7, [2, 3, 6, 7]))
     print(result)
 
-testFunction()
-
+# testFunction()
 
 
 # from collections import defaultdict
@@ -82,16 +75,16 @@ testFunction()
 
 #             for w in wordDict:
 #                 wLen = len(w)
-                
+
 #                 if word[:wLen] == w:
 #                     canConstructRes = dfs(word[wLen:], wordDict)
-#                     if canConstructRes == True: 
+#                     if canConstructRes == True:
 #                         memo[word] = True
 #                         return True
 
 #             memo[word] = False
-#             return False 
-        
+#             return False
+
 #         return dfs(s, wordDict)
 
 
@@ -100,3 +93,13 @@ testFunction()
 # print(obj.wordBreak('leetcode', ["leet","code"] ))
 
 # s = "leetcode", wordDict = ["leet","code"]
+
+
+nums = [1, 1, 2, 4, 9]
+
+heapify(nums)
+
+heappush(nums, 0)
+
+
+print(heappop(nums), heappop(nums))

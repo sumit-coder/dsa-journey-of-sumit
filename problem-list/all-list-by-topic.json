@@ -1,0 +1,23 @@
+{
+    "problemsByTopic": [
+        {
+            "topicTitle": "Array and String",
+            "problems": [
+                {
+                    "problemInLists": [
+                        "LC-75",
+                        "LC-150",
+                        "LC-LIKED-100",
+                        "NC-75",
+                        "NC-150",
+                        "BLIND-75",
+                        "SEAN-180",
+                        "CTCI-BOOK-189"
+                    ],
+                    "problemTitle": "Contains Duplicate",
+                    "problemUrl": "https://leetcode.com/problems/contains-duplicate/"
+                }
+            ]
+        }
+    ]
+}
