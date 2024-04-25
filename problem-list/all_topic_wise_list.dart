@@ -36,6 +36,8 @@ main() async {
   print(jsonEncode(byTopicMap));
 }
 
+// {"title": '', 'url':'', 'inLists':['LC75']}
+
 Map asdfa = {
   "Array / String": [
     "https://leetcode.com/problems/merge-sorted-array/",
@@ -93,14 +95,6 @@ Map asdfa = {
     "https://leetcode.com/problems/sliding-window-maximum/",
     "https://leetcode.com/problems/find-all-anagrams-in-a-string/"
   ],
-  "Matrix": [
-    "https://leetcode.com/problems/valid-sudoku/",
-    "https://leetcode.com/problems/spiral-matrix/",
-    "https://leetcode.com/problems/rotate-image/",
-    "https://leetcode.com/problems/set-matrix-zeroes/",
-    "https://leetcode.com/problems/game-of-life/",
-    "https://leetcode.com/problems/search-a-2d-matrix-ii/"
-  ],
   "Hashmap": [
     "https://leetcode.com/problems/ransom-note/",
     "https://leetcode.com/problems/isomorphic-strings/",
@@ -121,16 +115,6 @@ Map asdfa = {
     "https://leetcode.com/problems/top-k-frequent-elements/",
     "https://leetcode.com/problems/encode-and-decode-strings/"
   ],
-  "Intervals": [
-    "https://leetcode.com/problems/summary-ranges/",
-    "https://leetcode.com/problems/merge-intervals/",
-    "https://leetcode.com/problems/insert-interval/",
-    "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
-    "https://leetcode.com/problems/non-overlapping-intervals/",
-    "https://leetcode.com/problems/meeting-rooms/",
-    "https://leetcode.com/problems/meeting-rooms-ii/",
-    "https://leetcode.com/problems/minimum-interval-to-include-each-query/"
-  ],
   "Stack": [
     "https://leetcode.com/problems/valid-parentheses/",
     "https://leetcode.com/problems/simplify-path/",
@@ -146,13 +130,31 @@ Map asdfa = {
     "https://leetcode.com/problems/largest-rectangle-in-histogram/",
     "https://leetcode.com/problems/online-stock-span/"
   ],
+  "Queue": [
+    "https://leetcode.com/problems/number-of-recent-calls/",
+    "https://leetcode.com/problems/dota2-senate/",
+  ],
+  "Intervals": [
+    "https://leetcode.com/problems/summary-ranges/",
+    "https://leetcode.com/problems/merge-intervals/",
+    "https://leetcode.com/problems/insert-interval/",
+    "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+    "https://leetcode.com/problems/non-overlapping-intervals/",
+    "https://leetcode.com/problems/meeting-rooms/",
+    "https://leetcode.com/problems/meeting-rooms-ii/",
+    "https://leetcode.com/problems/minimum-interval-to-include-each-query/"
+  ],
   "Prefix Sum": [
     "https://leetcode.com/problems/find-the-highest-altitude/",
     "https://leetcode.com/problems/find-pivot-index/",
   ],
-  "Queue": [
-    "https://leetcode.com/problems/number-of-recent-calls/",
-    "https://leetcode.com/problems/dota2-senate/",
+  "Matrix": [
+    "https://leetcode.com/problems/valid-sudoku/",
+    "https://leetcode.com/problems/spiral-matrix/",
+    "https://leetcode.com/problems/rotate-image/",
+    "https://leetcode.com/problems/set-matrix-zeroes/",
+    "https://leetcode.com/problems/game-of-life/",
+    "https://leetcode.com/problems/search-a-2d-matrix-ii/"
   ],
   "Linked List": [
     "https://leetcode.com/problems/linked-list-cycle/",
@@ -179,6 +181,13 @@ Map asdfa = {
     "https://leetcode.com/problems/intersection-of-two-linked-lists/",
     "https://leetcode.com/problems/palindrome-linked-list/"
   ],
+  "Trees": [
+    "https://leetcode.com/problems/balanced-binary-tree/",
+    "https://leetcode.com/problems/subtree-of-another-tree/",
+    "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+    "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
+    "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+  ],
   "Binary Tree General": [
     "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
     "https://leetcode.com/problems/same-tree/",
@@ -201,26 +210,15 @@ Map asdfa = {
     "https://leetcode.com/problems/binary-tree-right-side-view/",
     "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
     "https://leetcode.com/problems/path-sum-iii/",
-    "https://leetcode.com/problems/diameter-of-binary-tree/"
-  ],
-  "Trees": [
-    "https://leetcode.com/problems/balanced-binary-tree/",
-    "https://leetcode.com/problems/subtree-of-another-tree/",
-    "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
-    "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
-    "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
-  ],
-  "Binary Tree BFS": [
+    "https://leetcode.com/problems/diameter-of-binary-tree/",
     "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
     "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
     "https://leetcode.com/problems/search-in-a-binary-search-tree/",
-    "https://leetcode.com/problems/delete-node-in-a-bst/"
-  ],
-  "Binary Tree DFS": [
+    "https://leetcode.com/problems/delete-node-in-a-bst/",
     "https://leetcode.com/problems/leaf-similar-trees/",
-    "https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/"
+    "https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/",
+    "https://leetcode.com/problems/minimum-absolute-difference-in-bst/"
   ],
-  "Binary Search Tree": ["Binary Search Tree", "https://leetcode.com/problems/minimum-absolute-difference-in-bst/"],
   "Graph": [
     "https://leetcode.com/problems/number-of-islands/",
     "https://leetcode.com/problems/surrounded-regions/",
