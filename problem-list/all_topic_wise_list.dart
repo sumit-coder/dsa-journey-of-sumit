@@ -1,44 +1,44 @@
 import 'dart:io';
 import 'dart:convert';
 
-main() async {
-  var path = "D:\\APPS\\__Work 2023\\Flutter\\Project Portfolio\\dsa-journey-of-sumit\\problem-list\\_top 150.txt";
-  Map<String, List> byTopicMap = {};
-  String lastTopic = '';
-  bool next = false;
-  List alreadyUsed = [];
-  await File(path).openRead().transform(utf8.decoder).transform(LineSplitter()).forEach((line) {
-    if (next) {
-      next = false;
-      lastTopic = line;
-    }
-    if (line.length == 0) {
-      next = true;
-    }
-    if (line.length != 0) {
-      if (byTopicMap.containsKey(lastTopic)) {
-        if (!alreadyUsed.contains(line)) {
-          byTopicMap[lastTopic]!.add(line);
-          alreadyUsed.add(line);
-        }
-      } else {
-        byTopicMap[lastTopic] = [];
-        // if not already there then added the problem in this topic
-        if (!alreadyUsed.contains(line)) {
-          byTopicMap[lastTopic]!.add(line);
-          alreadyUsed.add(line);
-        }
-      }
-    }
-    print(line);
-  });
+// main() async {
+//   var path = "D:\\APPS\\__Work 2023\\Flutter\\Project Portfolio\\dsa-journey-of-sumit\\problem-list\\_top 150.txt";
+//   Map<String, List> byTopicMap = {};
+//   String lastTopic = '';
+//   bool next = false;
+//   List alreadyUsed = [];
+//   await File(path).openRead().transform(utf8.decoder).transform(LineSplitter()).forEach((line) {
+//     if (next) {
+//       next = false;
+//       lastTopic = line;
+//     }
+//     if (line.length == 0) {
+//       next = true;
+//     }
+//     if (line.length != 0) {
+//       if (byTopicMap.containsKey(lastTopic)) {
+//         if (!alreadyUsed.contains(line)) {
+//           byTopicMap[lastTopic]!.add(line);
+//           alreadyUsed.add(line);
+//         }
+//       } else {
+//         byTopicMap[lastTopic] = [];
+//         // if not already there then added the problem in this topic
+//         if (!alreadyUsed.contains(line)) {
+//           byTopicMap[lastTopic]!.add(line);
+//           alreadyUsed.add(line);
+//         }
+//       }
+//     }
+//     print(line);
+//   });
 
-  print(jsonEncode(byTopicMap));
-}
+//   print(jsonEncode(byTopicMap));
+// }
 
 // {"title": '', 'url':'', 'inLists':['LC75']}
 
-Map asdfa = {
+Map listOfProblemsByTopic = {
   "Array / String": [
     "https://leetcode.com/problems/merge-sorted-array/",
     "https://leetcode.com/problems/remove-element/",
@@ -372,3 +372,7 @@ Map asdfa = {
     "https://leetcode.com/problems/sort-colors/"
   ]
 };
+
+void main(List<String> args) {
+  for (var topic in listOfProblemsByTopic.keys) {}
+}
