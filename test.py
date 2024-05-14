@@ -33,29 +33,29 @@
 # # for idx in range(len(arr)):
 
 
-from heapq import heapify, heappush, heappop
+# from heapq import heapify, heappush, heappop
 
 
-def testFunction():
+# def testFunction():
 
-    result = []
+#     result = []
 
-    def dfs(target, numBank):
-        if target < 0:
-            return None
-        if target == 0:
-            return []
+#     def dfs(target, numBank):
+#         if target < 0:
+#             return None
+#         if target == 0:
+#             return []
 
-        for num in numBank:
-            newTarget = target - num
-            targetCombi = dfs(newTarget, numBank)
-            print(targetCombi)
-            if targetCombi != None:
-                fullCombination = [targetCombi, num]
-                result.append(fullCombination)
+#         for num in numBank:
+#             newTarget = target - num
+#             targetCombi = dfs(newTarget, numBank)
+#             print(targetCombi)
+#             if targetCombi != None:
+#                 fullCombination = [targetCombi, num]
+#                 result.append(fullCombination)
 
-    print(dfs(7, [2, 3, 6, 7]))
-    print(result)
+#     print(dfs(7, [2, 3, 6, 7]))
+#     print(result)
 
 # testFunction()
 
@@ -95,11 +95,69 @@ def testFunction():
 # s = "leetcode", wordDict = ["leet","code"]
 
 
-nums = [1, 1, 2, 4, 9]
+# nums = [1, 1, 2, 4, 9]
 
-heapify(nums)
+# heapify(nums)
 
-heappush(nums, 0)
+# heappush(nums, 0)
 
 
-print(heappop(nums), heappop(nums))
+# print(heappop(nums), heappop(nums))
+
+# --------------------------------------------------------------------------------------------------
+# Learning Graph DSA
+from collections import deque
+from re import S
+
+
+# graph = {
+#     'a': ['b', 'c'],
+#     'b': ['d'],
+#     'c': ['e'],
+#     'd': ['f'],
+#     'e': [],
+#     'f': []
+# }
+
+
+# def dfs(graph, source):
+#     print(source)
+#     for n in graph[source]:
+#         dfs(graph, n)
+
+# def bfs(graph, source):
+#     queue = deque([source])
+
+#     while queue:
+#         currVal = queue.pop()
+#         print(currVal)
+#         for n in graph[currVal]:
+#             queue.append(n)
+
+
+# bfs(graph, 'a')
+
+# Problem - 1
+
+graph = {
+    'f': ['g', 'i'],
+    'g': ['h'],
+    'h': [],
+    'i': ['g', 'k'],
+    'j': ['i'],
+    'k': []
+}
+
+
+def hasPath(graph, src, dst):
+    if src == dst:
+        return True
+
+    for neighbor in graph[src]:
+        if hasPath(graph, neighbor, dst) == True:
+            return True
+
+    return False
+
+
+print(hasPath(graph, 'f', 'k'))

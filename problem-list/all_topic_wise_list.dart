@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:chaleno/chaleno.dart';
+import 'package:http/http.dart' as http;
 
 // main() async {
 //   var path = "D:\\APPS\\__Work 2023\\Flutter\\Project Portfolio\\dsa-journey-of-sumit\\problem-list\\_top 150.txt";
@@ -373,6 +375,12 @@ Map listOfProblemsByTopic = {
   ]
 };
 
-void main(List<String> args) {
-  for (var topic in listOfProblemsByTopic.keys) {}
+void main(List<String> args) async {
+  // for (var topic in listOfProblemsByTopic.keys) {
+  //   http.get(url);
+  // }
+  // var res = await http.get(Uri.parse('https://leetcode.com/problems/sort-colors/'));
+  var parser = await Chaleno().load('https://leetcode.com/problems/sort-colors/');
+
+  print(parser!.getElementsByTagName('title')!.first.text);
 }
