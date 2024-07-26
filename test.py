@@ -106,10 +106,10 @@
 
 # --------------------------------------------------------------------------------------------------
 # Learning Graph DSA
-from collections import deque
-from re import S
 
 
+# -------------------------------------------------
+# from collections import UserString, deque
 # graph = {
 #     'a': ['b', 'c'],
 #     'b': ['d'],
@@ -125,6 +125,7 @@ from re import S
 #     for n in graph[source]:
 #         dfs(graph, n)
 
+
 # def bfs(graph, source):
 #     queue = deque([source])
 
@@ -135,29 +136,74 @@ from re import S
 #             queue.append(n)
 
 
-# bfs(graph, 'a')
-
+# dfs(graph, 'a')
+# -------------------------------------------------
 # Problem - 1
 
-graph = {
-    'f': ['g', 'i'],
-    'g': ['h'],
-    'h': [],
-    'i': ['g', 'k'],
-    'j': ['i'],
-    'k': []
-}
+# graph = {
+#     'f': ['g', 'i'],
+#     'g': ['h'],
+#     'h': [],
+#     'i': ['g', 'k'],
+#     'j': ['i'],
+#     'k': []
+# }
 
 
-def hasPath(graph, src, dst):
-    if src == dst:
-        return True
+# def hasPath(graph, start, end):
+#     stack = [start]
 
-    for neighbor in graph[src]:
-        if hasPath(graph, neighbor, dst) == True:
+#     while stack:
+#         currNode = stack.pop()
+#         print(currNode)
+#         for node in graph[currNode]:
+#             if node == end:
+#                 return True
+#             stack.append(node)
+
+#     return False
+
+
+# print(hasPath(graph, 'f', 'j'))
+
+# -------------------------------------------------
+# Problem - 2 - undirected path with cycle's
+
+from collections import defaultdict
+
+
+edgesList = [
+    ['i', 'j'],
+    ['k', 'i'],
+    ['m', 'k'],
+    ['k', 'l'],
+    ['o', 'n'],
+]
+
+
+def findPath(graph, start, end):
+    adj = defaultdict(list)
+    for edge in graph:
+        fromNode = edge[0]
+        toNode = edge[1]
+
+        adj[fromNode].append(toNode)
+        adj[toNode].append(fromNode)
+
+    # dfs
+    stack = [start]
+    seen = set()
+    while stack:
+        curr = stack.pop()
+        if curr == end:
             return True
+
+        for edge in adj[curr]:
+            if edge not in seen:
+                stack.append(edge)
+                seen.add(edge)
 
     return False
 
 
-print(hasPath(graph, 'f', 'k'))
+print(findPath(edgesList, 'i', 'j'))
