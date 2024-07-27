@@ -137,7 +137,7 @@
 
 
 # dfs(graph, 'a')
-# -------------------------------------------------
+# ------------------------------------------------------------------------------------------------------
 # Problem - 1
 
 # graph = {
@@ -166,9 +166,141 @@
 
 # print(hasPath(graph, 'f', 'j'))
 
-# -------------------------------------------------
+# ----------------------------------------------------------------------------------------------
 # Problem - 2 - undirected path with cycle's
 
+# from collections import defaultdict
+
+
+# edgesList = [
+#     ['i', 'j'],
+#     ['k', 'i'],
+#     ['m', 'k'],
+#     ['k', 'l'],
+#     ['o', 'n'],
+# ]
+
+
+# def findPath(graph, start, end):
+#     adj = defaultdict(list)
+#     for edge in graph:
+#         fromNode = edge[0]
+#         toNode = edge[1]
+
+#         adj[fromNode].append(toNode)
+#         adj[toNode].append(fromNode)
+
+#     visited = set()
+#     # dfs
+
+#     def dfs(graph, src, dst, visited):
+#         if src == dst:
+#             return True
+#         if src in visited:
+#             return False
+#         visited.add(src)
+#         for nei in graph[src]:
+#             if dfs(graph, nei, dst, visited) == True:
+#                 return True
+
+#         return False
+
+#     return dfs(adj, start, end, visited)
+
+#     # stack = [start]
+#     # seen = set()
+#     # while stack:
+#     #     curr = stack.pop()
+#     #     if curr == end:
+#     #         return True
+
+#     #     for edge in adj[curr]:
+#     #         if edge not in seen:
+#     #             stack.append(edge)
+#     #             seen.add(edge)
+
+#     # return False
+
+
+# print(findPath(edgesList, 'n', 'k'))
+
+
+# --------------------------------------------------------------------------------------------------
+# Problem - 3 - connected components count
+# from collections import defaultdict
+
+
+# edgesList = [
+#     ['i', 'j'],
+#     ['k', 'i'],
+#     ['m', 'k'],
+#     ['k', 'l'],
+#     ['o', 'n'],
+#     ['z', 'p'],
+# ]
+
+
+# ================== USING NO RETURN FROM DFS FUNCTION ======================
+# def connectedComp(graph):
+#     adj = defaultdict(list)
+#     res = 0
+#     visited = set()
+
+#     # fill adj list
+#     for edge in graph:
+#         adj[edge[0]].append(edge[1])
+#         adj[edge[1]].append(edge[0])
+
+#     # traverse throw the graph stating on every unvisited node
+#     def graphDFS(graph, currNode, visited):
+#         if currNode in visited: return
+#         visited.add(currNode)
+
+#         for neg in graph[currNode]:
+#             graphDFS(graph, neg, visited)
+
+#     # iterate throw all edges and find components
+#     for edge in adj.keys():
+#         if not edge in visited:
+#             res += 1
+#             graphDFS(adj, edge, visited)
+
+#     return res
+
+# ======================= USING RETURN THROW DFS FUNCTION ===================================
+# def connectedComp(graph):
+#     adj = defaultdict(list)
+#     res = 0
+#     visited = set()
+
+#     # fill adj list
+#     for edge in graph:
+#         adj[edge[0]].append(edge[1])
+#         adj[edge[1]].append(edge[0])
+
+#     # try to traverse throw the graph stating on every node
+#     def graphDFS(graph, currNode, visited):
+#         if currNode in visited:
+#             return False
+#         visited.add(currNode)
+
+#         for neg in graph[currNode]:
+#             graphDFS(graph, neg, visited)
+
+#         return True
+
+#     # iterate throw all edges and find components
+#     for edge in adj.keys():
+#         if graphDFS(adj, edge, visited) == True:
+#             res += 1
+
+#     return res
+
+
+# print(connectedComp(edgesList))
+
+# --------------------------------------------------------------------------------------------------
+# Problem - 4 - largest components
 from collections import defaultdict
 
 
@@ -178,32 +310,34 @@ edgesList = [
     ['m', 'k'],
     ['k', 'l'],
     ['o', 'n'],
+    ['z', 'p'],
 ]
 
 
-def findPath(graph, start, end):
+def largestComponent(edgesList):
     adj = defaultdict(list)
-    for edge in graph:
-        fromNode = edge[0]
-        toNode = edge[1]
+    for edge in edgesList:
+        adj[edge[0]].append(edge[1])
+        adj[edge[1]].append(edge[0])
 
-        adj[fromNode].append(toNode)
-        adj[toNode].append(fromNode)
+    def dfs(graph, currNode, visited):
+        if currNode in visited:
+            return 0
 
-    # dfs
-    stack = [start]
-    seen = set()
-    while stack:
-        curr = stack.pop()
-        if curr == end:
-            return True
+        visited.add(currNode)
+        count = 1
+        for nei in graph[currNode]:
+            count += dfs(graph, nei, visited)
 
-        for edge in adj[curr]:
-            if edge not in seen:
-                stack.append(edge)
-                seen.add(edge)
+        return count
 
-    return False
+    visited = set()
+    res = -1
+    for edge in adj.keys():
+        if not edge in visited:
+            res = max(dfs(adj, edge, visited), res)
+
+    return res
 
 
-print(findPath(edgesList, 'i', 'j'))
+print(largestComponent(edgesList))
