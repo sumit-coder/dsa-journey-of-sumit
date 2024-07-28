@@ -301,43 +301,192 @@
 
 # --------------------------------------------------------------------------------------------------
 # Problem - 4 - largest components
-from collections import defaultdict
+# from collections import defaultdict
 
 
-edgesList = [
-    ['i', 'j'],
-    ['k', 'i'],
-    ['m', 'k'],
-    ['k', 'l'],
-    ['o', 'n'],
-    ['z', 'p'],
+# edgesList = [
+#     ['i', 'j'],
+#     ['k', 'i'],
+#     ['m', 'k'],
+#     ['k', 'l'],
+#     ['o', 'n'],
+#     ['z', 'p'],
+# ]
+
+
+# def largestComponent(edgesList):
+#     adj = defaultdict(list)
+#     for edge in edgesList:
+#         adj[edge[0]].append(edge[1])
+#         adj[edge[1]].append(edge[0])
+
+#     def dfs(graph, currNode, visited):
+#         if currNode in visited:
+#             return 0
+
+#         visited.add(currNode)
+#         count = 1
+#         for nei in graph[currNode]:
+#             count += dfs(graph, nei, visited)
+
+#         return count
+
+#     visited = set()
+#     res = -1
+#     for edge in adj.keys():
+#         if not edge in visited:
+#             res = max(dfs(adj, edge, visited), res)
+
+#     return res
+
+
+# print(largestComponent(edgesList))
+
+# --------------------------------------------------------------------------------------------------
+# Problem - 5 - shortest path
+from collections import defaultdict, deque
+# import heapq
+
+
+# edgesList = [
+#     ['i', 'j'],
+#     ['k', 'i'],
+#     ['m', 'k'],
+#     ['k', 'l'],
+#     ['o', 'n'],
+#     ['z', 'p'],
+# ]
+
+
+# def findShortestPath(graph, start, end):
+#     adj = defaultdict(list)
+#     for node1, node2 in graph:
+#         adj[node1].append(node2)
+#         adj[node2].append(node1)
+
+#     # def bfs():
+#     #     pass
+
+#     queue = deque([[start, 0]])
+#     visited = set()
+
+#     while queue:
+#         currNode, distance = queue.popleft()
+#         if currNode == end:
+#             return distance
+#         if not currNode in visited:
+#             visited.add(currNode)
+#             for nei in adj[currNode]:
+#                 queue.append([nei, distance + 1])
+
+#     return -1
+
+
+# print(findShortestPath(edgesList, 'i', 'n'))
+
+
+# # --------------------------------------------------------------------------------------------------
+# # Problem - 6 - Island Count
+# graphMatrix = [
+#     [0, 1, 0, 0, 1, 0],
+#     [1, 1, 0, 0, 1, 0],
+#     [0, 1, 0, 0, 0, 0],
+#     [0, 0, 0, 1, 1, 0],
+#     [0, 1, 0, 1, 1, 0],
+#     [0, 0, 0, 0, 0, 1],
+# ]
+
+# #     [-, 1, -, -, 1, -],
+# #     [1, 1, -, -, 1, -],
+# #     [-, 1, -, -, -, -],
+# #     [-, -, -, 1, 1, -],
+# #     [-, 1, -, 1, 1, -],
+# #     [-, -, -, -, -, -],
+
+
+# def islandCount():
+#     row, col = len(graphMatrix), len(graphMatrix[0])
+#     visited = set()
+#     res = 0
+
+#     def exploreIsland(r, c, visited):
+#         # if row or col go outside of matrix then return
+#         if not 0 <= r < row or not 0 <= c < col or graphMatrix[r][c] == 0:
+#             return
+#         if (r, c) in visited:
+#             return
+
+#         visited.add((r, c))
+#         exploreIsland(r-1, c, visited)  # UP
+#         exploreIsland(r+1, c, visited)  # DOWN
+#         exploreIsland(r, c-1, visited)  # LEFT
+#         exploreIsland(r, c+1, visited)  # RIGHT
+
+#     for r in range(row):
+#         for c in range(col):
+#             currNode = graphMatrix[r][c]
+#             if currNode == 1 and not (r, c) in visited:
+#                 exploreIsland(r, c, visited)
+#                 res += 1
+#     print(visited)
+
+#     return res
+
+
+# print(islandCount())
+
+# --------------------------------------------------------------------------------------------------
+# Problem - 7 - Min Island
+graphMatrix = [
+    [0, 1, 0, 0, 1, 0],
+    [1, 1, 0, 0, 1, 0],
+    [0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 1, 1, 0],
+    [0, 0, 0, 1, 1, 0],
+    [0, 0, 0, 0, 0, 1],
 ]
 
+#     [-, 1, -, -, 1, -],
+#     [1, 1, -, -, 1, -],
+#     [-, 1, -, -, -, -],
+#     [-, -, -, 1, 1, -],
+#     [-, 1, -, 1, 1, -],
+#     [-, -, -, -, -, -],
 
-def largestComponent(edgesList):
-    adj = defaultdict(list)
-    for edge in edgesList:
-        adj[edge[0]].append(edge[1])
-        adj[edge[1]].append(edge[0])
 
-    def dfs(graph, currNode, visited):
-        if currNode in visited:
+def islandCount():
+    row, col = len(graphMatrix), len(graphMatrix[0])
+    visited = set()
+    res = float('inf')
+
+    def exploreIsland(r, c, visited, count):
+        # if row or col go outside of matrix then return
+        if not 0 <= r < row or not 0 <= c < col or graphMatrix[r][c] == 0:
+            return 0
+        if (r, c) in visited:
             return 0
 
-        visited.add(currNode)
-        count = 1
-        for nei in graph[currNode]:
-            count += dfs(graph, nei, visited)
+        visited.add((r, c))
+        res = 0
+        res += exploreIsland(r-1, c, visited, count)  # UP
+        res += exploreIsland(r+1, c, visited, count)  # UP
+        res += exploreIsland(r, c-1, visited, count)  # UP
+        res += exploreIsland(r, c+1, visited, count)  # UP
+        # exploreIsland(r+1, c, visited)  # DOWN
+        # exploreIsland(r, c-1, visited)  # LEFT
+        # exploreIsland(r, c+1, visited)  # RIGHT
 
-        return count
+        return res + 1
 
-    visited = set()
-    res = -1
-    for edge in adj.keys():
-        if not edge in visited:
-            res = max(dfs(adj, edge, visited), res)
+    for r in range(row):
+        for c in range(col):
+            currNode = graphMatrix[r][c]
+            if currNode == 1 and not (r, c) in visited:
+                res = min(exploreIsland(r, c, visited, 1), res)
+
+    print(visited)
 
     return res
 
 
-print(largestComponent(edgesList))
+print(islandCount())
