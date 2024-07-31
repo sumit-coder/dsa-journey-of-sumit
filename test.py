@@ -347,7 +347,6 @@
 from collections import defaultdict, deque
 # import heapq
 
-
 # edgesList = [
 #     ['i', 'j'],
 #     ['k', 'i'],
@@ -467,7 +466,7 @@ def islandCount():
             return 0
 
         visited.add((r, c))
-        res = 0
+        res = 1
         res += exploreIsland(r-1, c, visited, count)  # UP
         res += exploreIsland(r+1, c, visited, count)  # UP
         res += exploreIsland(r, c-1, visited, count)  # UP
@@ -476,7 +475,7 @@ def islandCount():
         # exploreIsland(r, c-1, visited)  # LEFT
         # exploreIsland(r, c+1, visited)  # RIGHT
 
-        return res + 1
+        return res
 
     for r in range(row):
         for c in range(col):
@@ -490,3 +489,13 @@ def islandCount():
 
 
 print(islandCount())
+
+
+#
+#
+graph = [['O', 'O', 'O', 'O', 'O'],
+         ['O', 'X', 'O', 'O', 'O'],
+         ['O', 'X', 'X', 'O', 'O'],
+         ['O', 'X', 'C', 'O', 'O'],
+         ['O', 'X', 'X', 'O', 'O'],
+         ['C', 'O', 'O', 'O', 'O']]
