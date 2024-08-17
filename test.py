@@ -345,6 +345,7 @@
 # --------------------------------------------------------------------------------------------------
 # Problem - 5 - shortest path
 from collections import defaultdict, deque
+import heapq
 # import heapq
 
 # edgesList = [
@@ -436,66 +437,117 @@ from collections import defaultdict, deque
 
 # --------------------------------------------------------------------------------------------------
 # Problem - 7 - Min Island
-graphMatrix = [
-    [0, 1, 0, 0, 1, 0],
-    [1, 1, 0, 0, 1, 0],
-    [0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 1, 1, 0],
-    [0, 0, 0, 1, 1, 0],
-    [0, 0, 0, 0, 0, 1],
-]
+# graphMatrix = [
+#     [0, 1, 0, 0, 1, 0],
+#     [1, 1, 0, 0, 1, 0],
+#     [0, 1, 0, 0, 0, 0],
+#     [0, 0, 0, 1, 1, 0],
+#     [0, 0, 0, 1, 1, 0],
+#     [0, 0, 0, 0, 0, 1],
+# ]
 
-#     [-, 1, -, -, 1, -],
-#     [1, 1, -, -, 1, -],
-#     [-, 1, -, -, -, -],
-#     [-, -, -, 1, 1, -],
-#     [-, 1, -, 1, 1, -],
-#     [-, -, -, -, -, -],
-
-
-def islandCount():
-    row, col = len(graphMatrix), len(graphMatrix[0])
-    visited = set()
-    res = float('inf')
-
-    def exploreIsland(r, c, visited, count):
-        # if row or col go outside of matrix then return
-        if not 0 <= r < row or not 0 <= c < col or graphMatrix[r][c] == 0:
-            return 0
-        if (r, c) in visited:
-            return 0
-
-        visited.add((r, c))
-        res = 1
-        res += exploreIsland(r-1, c, visited, count)  # UP
-        res += exploreIsland(r+1, c, visited, count)  # UP
-        res += exploreIsland(r, c-1, visited, count)  # UP
-        res += exploreIsland(r, c+1, visited, count)  # UP
-        # exploreIsland(r+1, c, visited)  # DOWN
-        # exploreIsland(r, c-1, visited)  # LEFT
-        # exploreIsland(r, c+1, visited)  # RIGHT
-
-        return res
-
-    for r in range(row):
-        for c in range(col):
-            currNode = graphMatrix[r][c]
-            if currNode == 1 and not (r, c) in visited:
-                res = min(exploreIsland(r, c, visited, 1), res)
-
-    print(visited)
-
-    return res
+# #     [-, 1, -, -, 1, -],
+# #     [1, 1, -, -, 1, -],
+# #     [-, 1, -, -, -, -],
+# #     [-, -, -, 1, 1, -],
+# #     [-, 1, -, 1, 1, -],
+# #     [-, -, -, -, -, -],
 
 
-print(islandCount())
+# def islandCount():
+#     row, col = len(graphMatrix), len(graphMatrix[0])
+#     visited = set()
+#     res = float('inf')
+
+#     def exploreIsland(r, c, visited, count):
+#         # if row or col go outside of matrix then return
+#         if not 0 <= r < row or not 0 <= c < col or graphMatrix[r][c] == 0:
+#             return 0
+#         if (r, c) in visited:
+#             return 0
+
+#         visited.add((r, c))
+#         res = 1
+#         res += exploreIsland(r-1, c, visited, count)  # UP
+#         res += exploreIsland(r+1, c, visited, count)  # UP
+#         res += exploreIsland(r, c-1, visited, count)  # UP
+#         res += exploreIsland(r, c+1, visited, count)  # UP
+#         # exploreIsland(r+1, c, visited)  # DOWN
+#         # exploreIsland(r, c-1, visited)  # LEFT
+#         # exploreIsland(r, c+1, visited)  # RIGHT
+
+#         return res
+
+#     for r in range(row):
+#         for c in range(col):
+#             currNode = graphMatrix[r][c]
+#             if currNode == 1 and not (r, c) in visited:
+#                 res = min(exploreIsland(r, c, visited, 1), res)
+
+#     print(visited)
+
+#     return res
 
 
-#
-#
-graph = [['O', 'O', 'O', 'O', 'O'],
-         ['O', 'X', 'O', 'O', 'O'],
-         ['O', 'X', 'X', 'O', 'O'],
-         ['O', 'X', 'C', 'O', 'O'],
-         ['O', 'X', 'X', 'O', 'O'],
-         ['C', 'O', 'O', 'O', 'O']]
+# print(islandCount())
+
+
+# #
+# #
+# graph = [['O', 'O', 'O', 'O', 'O'],
+#          ['O', 'X', 'O', 'O', 'O'],
+#          ['O', 'X', 'X', 'O', 'O'],
+#          ['O', 'X', 'C', 'O', 'O'],
+#          ['O', 'X', 'X', 'O', 'O'],
+#          ['C', 'O', 'O', 'O', 'O']]
+
+
+# def minSwaps(nums) -> int:
+#     freqOfOne = sum(nums)
+#     oneCount = nums[0]
+#     end = 0
+#     res = float('inf')
+
+#     for start in range(len(nums)):
+#         if start != 0:
+#             oneCount -= nums[start-1]
+#         while end - start + 1 < freqOfOne:
+#             end += 1
+#             oneCount += nums[end % len(nums)]
+
+#         res = min(res, freqOfOne - oneCount)
+
+#     return res
+
+
+# print(minSwaps([0, 1, 1, 1, 0, 0, 1, 1, 0]))
+# ---------------------------------------------- HEAP Test ----------------------------------
+# heap = [2, 5, 8, 6, -7, 0]
+# heap = [(-1*n) for n in heap]
+# heapq.heapify(heap)
+# k = 2
+
+# while k:
+#     print(-1 * heapq.heappop(heap))
+#     # print(heapq.heappush(heap, 1))
+#     k -= 1
+
+
+# print(heap)
+
+
+#  ---------------------------------- build all combinations -----------------------
+
+nums = [10, 1, 2, 7, 6, 1, 5]
+res = []
+target = 8
+
+for i in range(len(nums)):
+    for j in range(len(nums)):
+        curr = nums[i:j+1]
+        if sum(curr) == target:
+            res.append(curr)
+        print(curr)
+
+print(res)
+# print(curr if len(curr) > 0 else 0)

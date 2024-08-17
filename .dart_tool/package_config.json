@@ -92,7 +92,10 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-04-25T17:37:05.022154Z",
+  "generated": "2024-08-13T14:15:33.385423Z",
   "generator": "pub",
-  "generatorVersion": "3.3.0"
+  "generatorVersion": "3.4.0",
+  "flutterRoot": "file:///C:/flutter",
+  "flutterVersion": "3.22.0",
+  "pubCache": "file:///C:/Users/win10/AppData/Local/Pub/Cache"
 }
